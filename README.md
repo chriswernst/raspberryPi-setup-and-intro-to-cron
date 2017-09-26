@@ -1,27 +1,22 @@
 # Raspberry Pi
-[//]: # (Image References)
-
-[image1]: ./images/text.jpg
-[image2]: ./images/swell.jpg
-[image3]: ./images/tides.jpg
-[image4]: ./images/pizero.jpg
 
 #### Overview
 
-We will step through a brief overview of how to setup the $10 Raspberry Pi Zero W, update it, transfer files, and automate the running of scripts. 
+We will step through a brief overview of how to setup the **$10** Raspberry Pi Zero W, update it, transfer files, and automate the running of scripts. 
 
-The newly release Pi Zero W boasts Bluetooth LE, WiFi, and a 1Ghz processor!
+The newly release Pi Zero W boasts ***Bluetooth LE, WiFi, and a 1Ghz processor!***
+
+###
+![alt text](https://www.raspberrypi.org/magpi/wp-content/uploads/2017/02/PI-Zero-W-web.jpg "Raspberry Pi Zero W")
+###
 
 Check them out at: https://www.raspberrypi.org/products/raspberry-pi-zero-w/
 
-### 
-![][image4]
-###
 
 **You'll also need to get:**
 - Power Supply (5V, >2A) Micro USB
 - 8GB or larger Micro SD
-- USB to Micro USB OTG adapter
+- USB to Micro USB OTG adapter - *(I suggest the USB hub, below, instead of this)* 
 - Micro USB Hub (Not all are compatible, one that is: https://www.amazon.com/LoveRPi-MicroUSB-Port-Raspberry-Zero/dp/B019BUA81U)
 - HDMI adapter
 - Wired/Wireless Keyboard & Mouse
@@ -30,19 +25,23 @@ Now you have your parts, we'll install Raspbian Jessie Linux OS onto the SD card
 
 You'll want to download NOOBS (not NOOBS lite) from: https://www.raspberrypi.org/downloads/noobs/
 
+###
+![alt text](https://www.raspberrypi.org/app/uploads/2012/02/RP_SD-150x150.png "NOOBS OS")
+###
+
 Plug your microSD card into your computer. Make sure your card is wiped clean using software like that from https://www.sdcard.org
 
 Once downloaded, extract those files, and drop into your newly formatted SD card(FAT format is suggested). An easy walkthrough of the Linux installation is here: https://www.raspberrypi.org/documentation/installation/noobs.md
 
-Now, plug in your Micro SD card, USB hub, HDMI, power supply(in the 'PWR' port), keyboard and mouse, and turn on the power. Raspian OS should start up. A green light on the device is a good sign.
+Now, plug in your Micro SD card, USB hub, HDMI, power supply(in the 'PWR' port), keyboard and mouse, and turn on the power. Raspbian OS should start up. A green light on the device is a good sign.
 
-If you're having issues, most of them can be traced to the power supply. Make sure you are providing adequate current ~2-2.5A (5V)
+If you're having issues, **most of them can be traced to the power supply**. Make sure you are providing adequate current ~2-2.5A (5V)
 #
 ###### Environment Setup
 #
 Once the system is up, go to the upper right-hand corner and plug in your WiFi details.
 
-Now, do some updates. Open a terminal (ctrl-alt-t on Linux) and type:
+Now, do some updates. Open a terminal *(ctrl-alt-t on Linux)* and type:
 
 `sudo apt-get update`
 
@@ -58,7 +57,7 @@ and install any required modules with:
 
 `pip3 install requests bs4 time datetime twilio`
 
-Your machine is now set up! For some, you can stop here, but we'll go into File transfer below.
+Your machine is now set up! For some, you can stop here, but we'll go into file transfer below.
 
 #
 ###### File Transfer
@@ -71,7 +70,7 @@ To go from my Raspberry Pi terminal out to my Mac, I used the command:
 
 `scp MacUserName@192.XXX.X.XX:/Users/Path/To/File/On/Mac/fileName.py ~`
 
-(change UserName and IP address above to your personal details of the machine you are pulling files from)
+*(change UserName and IP address above to your personal details of the machine you are pulling files from)*
 
 Make sure you save the file in the directory: `/home/pi/`  That `~` and the end of the line dictates the destination on the local machine.
 
@@ -112,13 +111,26 @@ A text file should open up explaining how Cron and its syntax works. I'll leave 
 
 `0 */3 * * * /home/pi/anyNameYouLike.sh`
 
-This sets the `anyNameYouLike.sh` script to run every 3 hours, at zero minutes. 
+This sets the `anyNameYouLike.sh` script to run **at zero minutes, every 3 hours, every day, of every month.** 
 
 As an example, to make it run every 6 hours, at the 15th minute, change it to: 
 
 `15 */6 * * * /home/pi/anyNameYouLike.sh`
 
-ctrl-x will exit, make sure to save your changes, and press enter to finalize.
+There are 5 positional arguments for time data. The syntax is:
+
+```
+ ┌───────────── minute (0 - 59)
+ │ ┌───────────── hour (0 - 23)
+ │ │ ┌───────────── day of month (1 - 31)
+ │ │ │ ┌───────────── month (1 - 12)
+ │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+ │ │ │ │ │                                       7 is also Sunday on some systems)
+ │ │ │ │ │
+ │ │ │ │ │
+ * * * * *  command to execute
+```
+*ctrl-x* will exit, make sure to save your changes, and press enter to finalize.
 
 ### 
 ### 
