@@ -36,7 +36,7 @@ Plug your microSD card into your computer. Make sure your card is wiped clean us
 NOOBS expects the FAT format. With 32gb or less SD cards, they will likely come out of the box in FAT(MS DOS) format. If your memory card is >32gb (SDXC), it will likely come in exFat format. This will need to be reformatted into FAT. A brief link can be found [Here](https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md)
 Or if you're on OSX, open **Disk Utility**, navigate to the new SD card, click *erase*, name the new card, and set the format to FAT.
 
-Once downloaded, extract those files, and drop into your newly formatted SD card(FAT formatting is necessary). An easy walkthrough of the NOOBS Linux installation is here: https://www.raspberrypi.org/documentation/installation/noobs.md
+Once downloaded, extract/unzip those files, and drop the file, not just the folder, into your newly formatted SD card(FAT formatting is necessary). An easy walkthrough of the NOOBS Linux installation is here: https://www.raspberrypi.org/documentation/installation/noobs.md
 
 Now, plug in your Micro SD card, USB hub, HDMI, power supply(in the 'PWR' port), keyboard and mouse, and turn on the power. Raspbian OS should start up. A green light on the device is a good sign.
 
