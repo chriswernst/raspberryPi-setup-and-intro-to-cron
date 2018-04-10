@@ -2,7 +2,7 @@
 
 #### Overview
 
-We will step through a brief overview of how to setup the **$10** Raspberry Pi Zero W, update it, transfer files, and automate the running of scripts. 
+We will step through a brief overview of how to setup the **$10** Raspberry Pi Zero W (guide also works for Pi 3B/+), update it, transfer files, and automate the running of scripts.
 
 The newly release Pi Zero W boasts ***Bluetooth LE, WiFi, and a 1Ghz processor!***
 
@@ -16,14 +16,12 @@ Check them out at: https://www.raspberrypi.org/products/raspberry-pi-zero-w/
 **You'll also need to get:**
 - Power Supply (5V, >2A) Micro USB
 - 8GB or larger Micro SD
-- USB to Micro USB OTG adapter - *(I suggest the USB hub, below, instead of this)* 
+- USB to Micro USB OTG adapter - *(I suggest the USB hub, below, instead of this)*
 - Micro USB Hub (Not all are compatible, one that is: https://www.amazon.com/LoveRPi-MicroUSB-Port-Raspberry-Zero/dp/B019BUA81U)
 - HDMI adapter
 - Wired/Wireless Keyboard & Mouse
 
-*(Note this method works with the Raspberry Pi 3B also)*
-
-Now you have your parts, we'll install Raspbian Jessie Linux OS onto the SD card. If your card came pre-installed with NOOBS, you may still want to do this as NOOBS updates are pushed regularly, and are critical to operation. 
+Now you have your parts, we'll install Raspbian Jessie Linux OS onto the SD card. If your card came pre-installed with NOOBS, you may still want to do this as NOOBS updates are pushed regularly, and are critical to operation.
 
 You'll want to download NOOBS (not NOOBS lite) from: https://www.raspberrypi.org/downloads/noobs/
 
@@ -50,7 +48,7 @@ Now, do some updates. Open a terminal *(ctrl-alt-t on Linux)* and type:
 
 `sudo apt-get update`
 
-then
+then (note: these might take some time)
 
 `sudo apt-get upgrade`
 
@@ -58,11 +56,11 @@ If you'll be working with Python, verify you have package manager for Python3 wi
 
 `sudo apt-get install python3-pip`
 
-and install any required modules with:
+and install any desired modules with:
 
 `pip3 install requests bs4 time datetime twilio`
 
-Your machine is now set up! For some, you can stop here, but we'll go into file transfer below.
+Your machine is now set up! For some, you can stop here, but we'll go into file transfer below using Secure Transfer Protocol.
 
 #
 ###### File Transfer
@@ -116,9 +114,9 @@ A text file should open up explaining how Cron and its syntax works. I'll leave 
 
 `0 */3 * * * /home/pi/anyNameYouLike.sh`
 
-This sets the `anyNameYouLike.sh` script to run **at zero minutes, every 3 hours, every day, of every month.** 
+This sets the `anyNameYouLike.sh` script to run **at zero minutes, every 3 hours, every day, of every month.**
 
-As an example, to make it run every 6 hours, at the 15th minute, change it to: 
+As an example, to make it run every 6 hours, at the 15th minute, change it to:
 
 `15 */6 * * * /home/pi/anyNameYouLike.sh`
 
@@ -137,8 +135,7 @@ There are 5 positional arguments for time data. The syntax is:
 ```
 *ctrl-x* will exit, make sure to save your changes, and press enter to finalize.
 
-### 
-### 
+###
+###
 
 ##### And that's it! Get creative with how to use the Raspberry Pi Zero W to automate your programming tasks!
-
