@@ -23,7 +23,7 @@ Check them out at: https://www.raspberrypi.org/products/raspberry-pi-zero-w/
 
 Now you have your parts, we'll install Raspbian Jessie Linux OS onto the SD card. If your card came pre-installed with NOOBS, you may still want to do this as NOOBS updates are pushed regularly, and are critical to operation.
 
-You'll want to download NOOBS (not NOOBS lite) from: https://www.raspberrypi.org/downloads/noobs/
+You'll want to download Raspberry Pi Imager from: https://www.raspberrypi.org/downloads/noobs/
 
 ###
 ![alt text](https://www.raspberrypi.org/app/uploads/2012/02/RP_SD-150x150.png "NOOBS OS")
